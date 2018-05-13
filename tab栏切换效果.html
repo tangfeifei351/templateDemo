@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<meta charset="utf-8">
+	<meta http-equiv="" >
+	<meta viewport="">
+	<style type="text/css">
+		body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+        .tabs {
+        	border: 1px solid #C0DCC0;
+            width: 400px;
+        }
+
+        nav {
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            overflow: hidden;
+            background-color: #C0DCC0;
+            display: flex;
+        }
+
+        nav>a {
+        	display: inline-block;
+            width: 100px;
+            border-right: 1px solid #FFF;
+        	box-sizing: border-box;
+        	cursor: pointer;
+        }
+        section{
+    		overflow: hidden;
+    		display: none;
+        }
+        section>ol{
+        	line-height: 30px;
+        }
+        section:first-child{
+        	display: block;
+        }
+        a.active {
+            background-color: #9BAF9B;
+        }
+        .cont ol {
+            line-height: 30px;
+        }
+	</style>
+</head>
+<body>
+<div class="tabs">
+	<nav>
+	<a data-cont="local">国内</a>
+	<a data-cont="internal">国际</a>
+	<a data-cont="sport">体育</a>
+	<a data-cont="entertain">娱乐</a>
+</nav>
+<section id='local'>
+	<ol>
+		<li>我说你怎么这个样子　</li>
+		<li>我说你怎么这个样子　</li>
+		<li>我说你怎么这个样子　</li>
+		<li>我说你怎么这个样子　</li>
+	</ol>
+</section>
+<section id='internal'>
+	<ol>
+		<li>我说你怎么这个样子2　</li>
+		<li>我说你怎么这个样子2　</li>
+		<li>我说你怎么这个样子2　</li>
+		<li>我说你怎么这个样子2　</li>
+	</ol>
+</section>
+<section id='sport'>
+	<ol>
+		<li>我说你怎么这个样子3　</li>
+		<li>我说你怎么这个样子3  </li>
+		<li>我说你怎么这个样子3　</li>
+		<li>我说你怎么这个样子3　</li>
+	</ol>
+</section>
+<section id='entertain'>
+	<ol>
+		<li>我说你怎么这个样子4　</li>
+		<li>我说你怎么这个样子4　</li>
+		<li>我说你怎么这个样子4　</li>
+		<li>我说你怎么这个样子4　</li>
+	</ol>
+</section>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	(function(key){
+		var nav_a = document.querySelectorAll('nav a');
+		for(let i=0,len = nav_a.length; i<len;i++){
+			if(key == i){
+				nav_a[i].classList.add('active');
+				document.querySelector('#'+nav_a[i].dataset['cont']).style.display = 'block';
+			}
+			nav_a[i].onclick = function(){
+				var currentNav = document.querySelector('.active');
+				document.querySelector('#'+currentNav.dataset['cont']).style.display = 'none';
+
+				currentNav.classList.remove('active');
+				this.classList.add('active');
+				document.querySelector('#'+this.dataset['cont']).style.display = 'block';
+			}
+		}
+	})(0);
+</script>
