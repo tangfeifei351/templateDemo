@@ -1,0 +1,32 @@
+<html>
+<body>
+<head>
+	<style>
+        .box {
+            width: 300px;
+            height: 200px;
+            padding-top: 100px;
+            background-color: pink;
+            margin: 100px;
+            text-align: center;
+            font: 18px/30px "simsun";
+            cursor: pointer;
+        }
+    </style>
+</head>
+<div class="box">
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		var div = document.getElementsByClassName('box')[0];
+		div.onmousemove = function(event){
+			event = event || window.event;
+			var pageX = scrollTop() + event.clientX;
+			var pageY = scrollLeft() + event.clientY;
+			this.innerHTML = "鼠标在盒子中的X坐标为：" + (pageX - this.offsetLeft) + "px;<br>鼠标在盒子中的Y坐标为：" + (pageY - this.offsetTop) + "px;";
+		}
+	}
+</script>
