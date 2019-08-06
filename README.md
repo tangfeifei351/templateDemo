@@ -1,2 +1,2 @@
 # templateDemo
-just make view 
+html & css usual layout
